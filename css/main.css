@@ -1,0 +1,22 @@
+:root {
+  /* COLORS */
+  --BGCOLOR: #333;
+  --FONTCOLOR: whitesmoke;
+
+  /* FONTS */
+  --FS: 24px;
+  --FF: "Playpen Sans", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+html {
+  background-color: var(--BGCOLOR);
+  color: var(--FONTCOLOR);
+  font-family: var(--FF);
+  font-size: var(--FS);
+}

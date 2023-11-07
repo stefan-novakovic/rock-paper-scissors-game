@@ -186,7 +186,6 @@ const resetBoard = () => {
     div.classList.remove("cp_images_fadein_animation");
     div.style.display = "block";
   });
-  startGame();
 };
 
 const updateScore = () => {

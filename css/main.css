@@ -189,7 +189,7 @@ header h1:focus-visible {
   }
 }
 
-.gameboard__computer .selected {
+/* .gameboard__computer .selected {
   margin: 10px auto 0;
 }
 
@@ -197,4 +197,4 @@ header h1:focus-visible {
   width: 0;
   visibility: 0;
   transition: all 1s;
-}
+} */

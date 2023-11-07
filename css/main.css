@@ -4,7 +4,7 @@
   --FONTCOLOR: whitesmoke;
 
   /* FONTS */
-  --FS: 24px;
+  --FS: 22px;
   --FF: "Playpen Sans", cursive;
 }
 
@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: 0;
+  outline: none;
 }
 
 html {
@@ -19,4 +20,118 @@ html {
   color: var(--FONTCOLOR);
   font-family: var(--FF);
   font-size: var(--FS);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  text-align: center;
+}
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.center {
+  text-align: center;
+}
+
+header h1 {
+  display: inline;
+}
+
+header h1:hover,
+header h1:focus-visible {
+  text-decoration: underline;
+}
+
+.scoreboard {
+  margin: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+
+.scoreboard__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 10px;
+  background-color: var(--FONTCOLOR);
+  color: var(--BGCOLOR);
+  font-weight: 1000;
+}
+
+.scoreboard__values {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 1000;
+  border: 2px solid var(--FONTCOLOR);
+  border-top: none;
+}
+
+.scoreboard__values p {
+  width: 50%;
+  padding: 4px 0;
+  text-align: center;
+  font-size: 26px;
+}
+
+.scoreboard__values p:hover,
+.scoreboard__values p:focus-visible {
+  background-color: var(--FONTCOLOR);
+  color: var(--BGCOLOR);
+}
+
+.scoreboard__values p:first-child {
+  border-right: 2px solid var(--FONTCOLOR);
+}
+
+.gameboard__player h3,
+.gameboard__computer h3 {
+  display: inline;
+}
+
+.gameboard__player h3:hover,
+.gameboard__player h3:focus-visible {
+  text-decoration: underline;
+}
+
+.gameboard__gameplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-inline: 10px;
+}
+
+.gameboard__gameplay .icon_wrapper {
+  max-width: 32%;
+  height: auto;
+  margin: 10px 0 0;
+}
+
+.gameboard__gameplay .icon_wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.gameboard__player .icon_wrapper img:hover,
+.gameboard__player .icon_wrapper img:focus-visible {
+  filter: brightness(110%);
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.selected {
+  margin: 0 auto;
+}
+
+.not-selected {
+  visibility: hidden;
+  width: 0;
+  transition: width 0.4s linear, visibility 0.4s linear;
 }

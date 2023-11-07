@@ -15,7 +15,72 @@
 </head>
 
 <body>
+    <header class="center">
+        <h1 tabindex="0">Rock Paper Scissors</h1>
+    </header>
+
     <main>
+        <section id="scoreboard" class="scoreboard">
+            <section class="scoreboard__alltime">
+                <h2 class="offscreen">All Time Score</h2>
+                <div class="scoreboard__title">
+                    <p>P1</p>
+                    <p>All Time</p>
+                    <p>CP</p>
+                </div>
+                <div class="scoreboard__values">
+                    <p tabindex="0">0</p>
+                    <p tabindex="0">0</p>
+                </div>
+            </section>
+
+            <section class="scoreboard__session">
+                <h2 class="offscreen">Session Score</h2>
+                <div class="scoreboard__title">
+                    <p>P1</p>
+                    <p>All Time</p>
+                    <p>CP</p>
+                </div>
+                <div class="scoreboard__values">
+                    <p tabindex="0">0</p>
+                    <p tabindex="0">0</p>
+                </div>
+            </section>
+        </section>
+
+        <section id="gameboard" class="gameboard">
+            <h2 class="offscreen">Gameboard</h2>
+            <section class="gameboard__player center">
+                <h3 tabindex="0">Player One Chooses...</h3>
+                <section class="gameboard__gameplay">
+                    <div class="icon_wrapper">
+                        <img id="rock_p1" src="img/rock.png" alt="Rock" width="500" height="500" tabindex="0">
+                    </div>
+                    <div class="icon_wrapper">
+                        <img id="paper_p1" src="img/paper.png" alt="Paper" width="500" height="500" tabindex="0">
+                    </div>
+                    <div class="icon_wrapper">
+                        <img id="scissors_p1" src="img/scissors.png" alt="Scissors" width="500" height="500"
+                            tabindex="0">
+                    </div>
+                </section>
+            </section>
+
+            <section class="gameboard__computer center">
+                <h3>Computer Chooses...</h3>
+                <section class="gameboard__gameplay">
+                    <div class="icon_wrapper">
+                        <img id="rock_cp" src="img/rock.png" alt="Rock" width="500" height="500">
+                    </div>
+                    <div class="icon_wrapper">
+                        <img id="paper_cp" src="img/paper.png" alt="Paper" width="500" height="500">
+                    </div>
+                    <div class="icon_wrapper">
+                        <img id="scissors_cp" src="img/scissors.png" alt="Scissors" width="500" height="500">
+                    </div>
+                </section>
+            </section>
+        </section>
     </main>
 </body>
 

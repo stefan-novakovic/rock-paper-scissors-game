@@ -109,7 +109,7 @@ header h1:focus-visible {
 }
 
 .gameboard__gameplay .icon_wrapper {
-  max-width: 32%;
+  width: 32%;
   height: auto;
   margin: 10px 0 0;
 }
@@ -126,12 +126,11 @@ header h1:focus-visible {
   cursor: pointer;
 }
 
-.selected {
-  margin: 0 auto;
+.gameboard__player .selected {
+  margin: 10px auto 0;
 }
 
-.not-selected {
-  visibility: hidden;
+.gameboard__player .not-selected {
   width: 0;
-  transition: width 0.4s linear, visibility 0.4s linear;
+  transition: all 1s;
 }

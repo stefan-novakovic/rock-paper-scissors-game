@@ -90,13 +90,14 @@ header h1:focus-visible {
   border-right: 2px solid var(--FONTCOLOR);
 }
 
-.gameboard__player h3,
-.gameboard__computer h3 {
+.gameboard__player h2,
+.gameboard__computer h2 {
+  font-size: 24px;
   display: inline;
 }
 
-.gameboard__player h3:hover,
-.gameboard__player h3:focus-visible {
+.gameboard__player h2:hover,
+.gameboard__player h2:focus-visible {
   text-decoration: underline;
 }
 
@@ -119,8 +120,8 @@ header h1:focus-visible {
   height: auto;
 }
 
-.gameboard__player .icon_wrapper img:hover,
-.gameboard__player .icon_wrapper img:focus-visible {
+.gameboard__player .icon_wrapper:not(.no-hover) img:hover,
+.gameboard__player .icon_wrapper:not(.no-hover) img:focus-visible {
   filter: brightness(110%);
   scale: 1.05;
   cursor: pointer;
@@ -132,5 +133,68 @@ header h1:focus-visible {
 
 .gameboard__player .not-selected {
   width: 0;
+  visibility: 0;
+  transition: all 1s;
+}
+
+.cp_images_fadeout_animation {
+  animation-name: fadeOut;
+  animation-duration: 2.25s;
+  animation-timing-function: linear;
+  animation-delay: 1.25s;
+  animation-fill-mode: forwards;
+}
+
+.cp_images_fadein_animation {
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    scale: 0;
+    transform: skew(0deg, 0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 0.75;
+    scale: 0.75;
+    transform: skew(0deg, 10deg);
+    transform: rotate(15deg);
+  }
+
+  80% {
+    opacity: 1;
+    scale: 1.15;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: skew(0deg, 0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.gameboard__computer .selected {
+  margin: 10px auto 0;
+}
+
+.gameboard__computer .not-selected {
+  width: 0;
+  visibility: 0;
   transition: all 1s;
 }

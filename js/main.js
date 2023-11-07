@@ -17,29 +17,32 @@ const startGame = () => {
   playerChoice();
 };
 
+function playerSymbol(event) {
+  const p1Images = document.querySelectorAll(
+    ".gameboard__player .icon_wrapper img"
+  );
+
+  p1Images.forEach((img) => {
+    if (event.target === img) {
+      img.parentElement.classList.add("selected");
+      img.parentElement.classList.add("no-hover");
+      updatePlayerMessage(event.target.alt.split(" ")[1]);
+      computerChoice(event.target.alt.split(" ")[1]);
+    } else {
+      img.setAttribute("tabindex", "-1");
+      img.parentElement.classList.add("not-selected");
+    }
+    img.removeEventListener("click", playerSymbol);
+  });
+}
+
 const playerChoice = () => {
   const p1Images = document.querySelectorAll(
     ".gameboard__player .icon_wrapper img"
   );
 
   p1Images.forEach((img) => {
-    img.addEventListener(
-      "click",
-      (event) => {
-        p1Images.forEach((img) => {
-          if (event.target === img) {
-            img.parentElement.classList.add("selected");
-            img.parentElement.classList.add("no-hover");
-            updatePlayerMessage(event.target.alt.split(" ")[1]);
-            computerChoice(event.target.alt.split(" ")[1]);
-          } else {
-            img.setAttribute("tabindex", "-1");
-            img.parentElement.classList.add("not-selected");
-          }
-        });
-      },
-      { once: true }
-    );
+    img.addEventListener("click", playerSymbol);
   });
 };
 
@@ -62,7 +65,7 @@ const computerChoice = (p1Choice) => {
   });
   setTimeout(() => {
     computerChoiceShow(p1Choice, cpChoice);
-  }, 4000);
+  }, 3750);
 };
 
 const computerChoiceShow = (p1Choice, cpChoice) => {
@@ -74,15 +77,53 @@ const computerChoiceShow = (p1Choice, cpChoice) => {
     if (img.alt === cpChoice) {
       img.parentElement.classList.remove("cp_images_fadeout_animation");
       img.parentElement.classList.add("cp_images_fadein_animation");
+
       setTimeout(() => {
         updateComputerMessage(cpChoice);
       }, 50);
+
       setTimeout(() => {
         updateWinnerMessage(p1Choice, cpChoice);
-      }, 1000);
+      }, 1500);
+
       setTimeout(() => {
-        resetBoard();
-      }, 4000);
+        const btn = document.querySelector(".playagainbtn");
+        btn.style.display = "block";
+        btn.focus();
+        let message;
+        if (p1Choice === cpChoice) {
+          message = `Player One chose ${p1Choice}, computer chose ${cpChoice}. Tie game. Play again?`;
+        }
+        if (p1Choice === "Rock" && cpChoice === "Scissors") {
+          message =
+            "Computer chose scissors. Rock smashes scissors. Congratulations, you win. Play again?";
+        }
+        if (p1Choice === "Paper" && cpChoice === "Rock") {
+          message =
+            "Computer chose rock. Paper wraps rock. Congratulations, you win. Play again?";
+        }
+        if (p1Choice === "Scissors" && cpChoice === "Paper") {
+          message =
+            "Computer chose paper. Scissors cut paper. Congratulations, you win. Play again?";
+        }
+        if (p1Choice === "Scissors" && cpChoice === "Rock") {
+          message =
+            "Computer chose rock. Rock smashes scissors. Computer wins. Play again?";
+        }
+        if (p1Choice === "Rock" && cpChoice === "Paper") {
+          message =
+            "Computer chose paper. Paper wraps rock. Computer wins. Play again?";
+        }
+        if (p1Choice === "Paper" && cpChoice === "Scissors") {
+          message =
+            "Computer chose scissors. Scissors cut paper. Computer wins. Play again?";
+        }
+
+        btn.ariaLabel = `${message}`;
+        btn.addEventListener("click", (event) => {
+          resetBoard();
+        });
+      }, 3000);
     } else {
       img.parentElement.style.display = "none";
     }
@@ -102,7 +143,7 @@ const updateWinnerMessage = (p1Choice, cpChoice) => {
     "Scissors cut paper!",
   ];
 
-  console.log("P1", p1Choice, "CP", cpChoice);
+  console.log("P1:", p1Choice, "\nCP:", cpChoice);
   const result =
     p1Choice === cpChoice
       ? "Tie game"
@@ -167,8 +208,12 @@ const updateWinnerMessage = (p1Choice, cpChoice) => {
 };
 
 const resetBoard = () => {
+  const btn = document.querySelector(".playagainbtn");
+  btn.style.display = "none";
+
   const p1Message = document.querySelector(".gameboard__player h2");
   p1Message.textContent = "Player One Chooses...";
+  p1Message.focus();
   const cpMessage = document.querySelector(".gameboard__computer h2");
   cpMessage.textContent = "Computer Chooses...";
   const divsP1 = document.querySelectorAll(".gameboard__player div");
@@ -186,22 +231,47 @@ const resetBoard = () => {
     div.classList.remove("cp_images_fadein_animation");
     div.style.display = "block";
   });
+  startGame();
 };
 
 const updateScore = () => {
-  document.querySelector(
+  const p1LocalScoreTable = document.querySelector(
     ".scoreboard__alltime .scoreboard__values p:first-child"
-  ).textContent = JSON.parse(localStorage.getItem("p1LocalScore") || 0);
+  );
+  p1LocalScoreTable.textContent = JSON.parse(
+    localStorage.getItem("p1LocalScore") || 0
+  );
+  p1LocalScoreTable.ariaLabel = `Player one has ${JSON.parse(
+    localStorage.getItem("p1LocalScore") || 0
+  )} all time wins`;
 
-  document.querySelector(
+  const cpLocalScoreTable = document.querySelector(
     ".scoreboard__alltime .scoreboard__values p:last-child"
-  ).textContent = JSON.parse(localStorage.getItem("cpLocalScore") || 0);
+  );
+  cpLocalScoreTable.textContent = JSON.parse(
+    localStorage.getItem("cpLocalScore") || 0
+  );
+  cpLocalScoreTable.ariaLabel = `Computer has ${JSON.parse(
+    localStorage.getItem("cpLocalScore") || 0
+  )} all time wins`;
 
-  document.querySelector(
+  const p1SessionScoreTable = document.querySelector(
     ".scoreboard__session .scoreboard__values p:first-child"
-  ).textContent = JSON.parse(sessionStorage.getItem("p1SessionScore") || 0);
+  );
+  p1SessionScoreTable.textContent = JSON.parse(
+    sessionStorage.getItem("p1SessionScore") || 0
+  );
+  p1SessionScoreTable.ariaLabel = `Player One has ${JSON.parse(
+    sessionStorage.getItem("p1SessionScore") || 0
+  )} wins in this session`;
 
-  document.querySelector(
+  const cpSessionScoreTable = document.querySelector(
     ".scoreboard__session .scoreboard__values p:last-child"
-  ).textContent = JSON.parse(sessionStorage.getItem("cpSessionScore") || 0);
+  );
+  cpSessionScoreTable.textContent = JSON.parse(
+    sessionStorage.getItem("cpSessionScore") || 0
+  );
+  cpSessionScoreTable.ariaLabel = `Computer has ${JSON.parse(
+    sessionStorage.getItem("cpSessionScore") || 0
+  )} wins in this session`;
 };

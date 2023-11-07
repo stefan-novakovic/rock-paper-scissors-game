@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Stefan Novaković">
+    <meta name="description" content="Rock Paper Scissors Game">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
@@ -20,7 +22,7 @@
     </header>
 
     <main>
-        <section id="scoreboard" class="scoreboard">
+        <section class="scoreboard">
             <section class="scoreboard__alltime">
                 <h2 class="offscreen">All Time Score</h2>
                 <div class="scoreboard__title">
@@ -52,14 +54,13 @@
             <h2 tabindex="0" aria-label="Player One Chooses">Player One Chooses...</h2>
             <section class="gameboard__gameplay">
                 <div class="icon_wrapper">
-                    <img id="rock_p1" src="img/rock.png" alt="Choose Rock" width="500" height="500" tabindex="0">
+                    <img src="img/rock.png" alt="Choose Rock" width="500" height="500" tabindex="0">
                 </div>
                 <div class="icon_wrapper">
-                    <img id="paper_p1" src="img/paper.png" alt="Choose Paper" width="500" height="500" tabindex="0">
+                    <img src="img/paper.png" alt="Choose Paper" width="500" height="500" tabindex="0">
                 </div>
                 <div class="icon_wrapper">
-                    <img id="scissors_p1" src="img/scissors.png" alt="Choose Scissors" width="500" height="500"
-                        tabindex="0">
+                    <img src="img/scissors.png" alt="Choose Scissors" width="500" height="500" tabindex="0">
                 </div>
             </section>
         </section>
@@ -68,16 +69,17 @@
             <h2>Computer Chooses...</h2>
             <section class="gameboard__gameplay">
                 <div class="icon_wrapper">
-                    <img id="rock_cp" src="img/rock.png" alt="Rock" width="500" height="500">
+                    <img src="img/rock.png" alt="Rock" width="500" height="500">
                 </div>
                 <div class="icon_wrapper">
-                    <img id="paper_cp" src="img/paper.png" alt="Paper" width="500" height="500">
+                    <img src="img/paper.png" alt="Paper" width="500" height="500">
                 </div>
                 <div class="icon_wrapper">
-                    <img id="scissors_cp" src="img/scissors.png" alt="Scissors" width="500" height="500">
+                    <img src="img/scissors.png" alt="Scissors" width="500" height="500">
                 </div>
             </section>
         </section>
+        <button class="playagainbtn">Play Again?</button>
     </main>
 </body>
 

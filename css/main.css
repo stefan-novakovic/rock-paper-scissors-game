@@ -1,10 +1,10 @@
 :root {
   /* COLORS */
-  --BGCOLOR: #333;
+  --BGCOLOR: #303030;
   --FONTCOLOR: whitesmoke;
 
   /* FONTS */
-  --FS: 22px;
+  --FS: 24px;
   --FF: "Playpen Sans", cursive;
 }
 
@@ -51,7 +51,7 @@ header h1:focus-visible {
   margin: 10px;
   display: flex;
   flex-flow: column nowrap;
-  gap: 10px;
+  gap: 5px;
 }
 
 .scoreboard__title {
@@ -156,6 +156,12 @@ header h1:focus-visible {
     opacity: 1;
     scale: 1;
   }
+
+  80% {
+    opacity: 0.2;
+    scale: 0.15;
+  }
+
   100% {
     opacity: 0;
     scale: 0;
@@ -189,12 +195,18 @@ header h1:focus-visible {
   }
 }
 
-/* .gameboard__computer .selected {
-  margin: 10px auto 0;
+.playagainbtn {
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(245, 245, 245, 0.75);
+  color: var(--BGCOLOR);
+  border: 4px groove var(--BGCOLOR);
+  font-family: inherit;
+  font-weight: 1000;
+  font-size: 32px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  display: none;
 }
-
-.gameboard__computer .not-selected {
-  width: 0;
-  visibility: 0;
-  transition: all 1s;
-} */

@@ -22,6 +22,9 @@ html {
   font-size: var(--FS);
   max-width: 550px;
   margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .offscreen {
@@ -219,4 +222,12 @@ header h1:focus-visible {
   padding: 1px 8px;
   border-radius: 10px;
   display: none;
+}
+
+@media screen and (max-height: 542px) {
+  html {
+    position: static;
+    top: 0;
+    transform: none;
+  }
 }

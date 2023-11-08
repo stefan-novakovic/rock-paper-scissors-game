@@ -36,6 +36,16 @@ function playerSymbol(event) {
   });
 }
 
+const listenForEnterKey = () => {
+  window.addEventListener("keydown", (event) => {
+    if (event.code === "Enter" && event.target.tagName === "IMG") {
+      event.target.click();
+      event.target.blur();
+      event.target.setAttribute("tabindex", "-1");
+    }
+  });
+};
+
 const playerChoice = () => {
   const p1Images = document.querySelectorAll(
     ".gameboard__player .icon_wrapper img"
@@ -44,6 +54,7 @@ const playerChoice = () => {
   p1Images.forEach((img) => {
     img.addEventListener("click", playerSymbol);
   });
+  listenForEnterKey();
 };
 
 const updatePlayerMessage = (playerChoice) => {

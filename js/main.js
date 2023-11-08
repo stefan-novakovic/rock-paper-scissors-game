@@ -103,31 +103,31 @@ const computerChoiceShow = (p1Choice, cpChoice) => {
         btn.focus();
         let message;
         if (p1Choice === cpChoice) {
-          message = `Player One chose ${p1Choice}, computer chose ${cpChoice}. Tie game. Play again?`;
+          message = `Player One chose ${p1Choice}, computer chose ${cpChoice}. Tie game. Press enter to play again.`;
         }
         if (p1Choice === "Rock" && cpChoice === "Scissors") {
           message =
-            "Computer chose scissors. Rock smashes scissors. Congratulations, you win. Play again?";
+            "Computer chose scissors. Rock smashes scissors. Congratulations, you win. Press enter to play again.";
         }
         if (p1Choice === "Paper" && cpChoice === "Rock") {
           message =
-            "Computer chose rock. Paper wraps rock. Congratulations, you win. Play again?";
+            "Computer chose rock. Paper wraps rock. Congratulations, you win. Press enter to play again.";
         }
         if (p1Choice === "Scissors" && cpChoice === "Paper") {
           message =
-            "Computer chose paper. Scissors cut paper. Congratulations, you win. Play again?";
+            "Computer chose paper. Scissors cut paper. Congratulations, you win. Press enter to play again.";
         }
         if (p1Choice === "Scissors" && cpChoice === "Rock") {
           message =
-            "Computer chose rock. Rock smashes scissors. Computer wins. Play again?";
+            "Computer chose rock. Rock smashes scissors. Computer wins. Press enter to play again.";
         }
         if (p1Choice === "Rock" && cpChoice === "Paper") {
           message =
-            "Computer chose paper. Paper wraps rock. Computer wins. Play again?";
+            "Computer chose paper. Paper wraps rock. Computer wins. Press enter to play again.";
         }
         if (p1Choice === "Paper" && cpChoice === "Scissors") {
           message =
-            "Computer chose scissors. Scissors cut paper. Computer wins. Play again?";
+            "Computer chose scissors. Scissors cut paper. Computer wins. Press enter to play again.";
         }
 
         btn.ariaLabel = `${message}`;

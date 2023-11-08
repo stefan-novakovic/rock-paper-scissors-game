@@ -23,6 +23,7 @@
 
     <main>
         <section class="scoreboard">
+            <a class="skip_link" href="#p1chooses">Skip Scoreboard</a>
             <section class="scoreboard__alltime">
                 <h2 class="offscreen">All Time Score</h2>
                 <div class="scoreboard__title">
@@ -51,23 +52,23 @@
         </section>
 
         <section class="gameboard__player center">
-            <h2 tabindex="0" aria-label="Player One Chooses">Player One Chooses...</h2>
+            <h2 id="p1chooses" tabindex="0" aria-label="Player One Chooses">Player One Chooses...</h2>
             <section class="gameboard__gameplay">
                 <div class="icon_wrapper">
-                    <img src="img/rock.png" alt="Choose Rock" width="500" height="500" tabindex="0">
+                    <img src="img/rock.png" alt="Select Rock" width="500" height="500" tabindex="0">
                 </div>
                 <div class="icon_wrapper">
-                    <img src="img/paper.png" alt="Choose Paper" width="500" height="500" tabindex="0">
+                    <img src="img/paper.png" alt="Select Paper" width="500" height="500" tabindex="0">
                 </div>
                 <div class="icon_wrapper">
-                    <img src="img/scissors.png" alt="Choose Scissors" width="500" height="500" tabindex="0">
+                    <img src="img/scissors.png" alt="Select Scissors" width="500" height="500" tabindex="0">
                 </div>
             </section>
         </section>
 
         <section class="gameboard__computer center">
-            <h2>Computer Chooses...</h2>
-            <section class="gameboard__gameplay">
+            <h2 aria-label="Computer Chooses">Computer Chooses...</h2>
+            <section class=" gameboard__gameplay">
                 <div class="icon_wrapper">
                     <img src="img/rock.png" alt="Rock" width="500" height="500">
                 </div>

@@ -24,11 +24,6 @@ html {
   margin: 0 auto;
 }
 
-h1 {
-  font-size: 28px;
-  text-align: center;
-}
-
 .offscreen {
   position: absolute;
   left: -10000px;
@@ -39,12 +34,27 @@ h1 {
 }
 
 header h1 {
+  font-size: 28px;
+  text-align: center;
   display: inline;
 }
 
 header h1:hover,
 header h1:focus-visible {
   text-decoration: underline;
+}
+
+.skip_link {
+  padding: 0 8px;
+  background-color: var(--BGCOLOR);
+  color: var(--FONTCOLOR);
+  position: absolute;
+  left: -10000px;
+  border: 2px solid var(--FONTCOLOR);
+}
+
+.skip_link:focus {
+  left: auto;
 }
 
 .scoreboard {

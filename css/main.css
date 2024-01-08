@@ -208,7 +208,7 @@ header h1:focus-visible {
   }
 }
 
-.playagainbtn {
+.playagain-btn {
   position: absolute;
   top: 86%;
   left: 50%;
@@ -221,6 +221,7 @@ header h1:focus-visible {
   font-size: 32px;
   padding: 1px 8px;
   border-radius: 10px;
+  cursor: pointer;
   display: none;
 }
 

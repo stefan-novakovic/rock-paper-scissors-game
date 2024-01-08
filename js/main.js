@@ -98,7 +98,7 @@ const computerChoiceShow = (p1Choice, cpChoice) => {
       }, 1500);
 
       setTimeout(() => {
-        const btn = document.querySelector(".playagainbtn");
+        const btn = document.querySelector(".playagain-btn");
         btn.style.display = "block";
         btn.focus();
         let message;
@@ -219,7 +219,7 @@ const updateWinnerMessage = (p1Choice, cpChoice) => {
 };
 
 const resetBoard = () => {
-  const btn = document.querySelector(".playagainbtn");
+  const btn = document.querySelector(".playagain-btn");
   btn.style.display = "none";
 
   const p1Message = document.querySelector(".gameboard__player h2");

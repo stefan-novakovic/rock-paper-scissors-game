@@ -22,9 +22,6 @@ html {
   font-size: var(--FS);
   max-width: 550px;
   margin: 0 auto;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .offscreen {

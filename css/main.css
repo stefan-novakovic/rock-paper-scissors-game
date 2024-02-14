@@ -11,7 +11,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   outline: none;
 }
 
@@ -34,6 +34,10 @@ html {
 
 .center {
   text-align: center;
+}
+
+header {
+  margin-top: 1rem;
 }
 
 header h1 {
@@ -101,6 +105,10 @@ header h1:focus-visible {
 
 .scoreboard__values p:first-child {
   border-right: 2px solid var(--FONTCOLOR);
+}
+
+.gameboard__computer {
+  margin-bottom: 1rem;
 }
 
 .gameboard__player h2,

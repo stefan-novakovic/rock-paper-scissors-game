@@ -109,7 +109,6 @@ header h1:focus-visible {
   display: inline;
 }
 
-.gameboard__player h2:hover,
 .gameboard__player h2:focus-visible {
   text-decoration: underline;
 }
